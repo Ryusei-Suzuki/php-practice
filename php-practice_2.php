@@ -45,7 +45,7 @@ foreach ($personalInfos as $x){
   $numQ2++;
 }
 
-// 問題3
+// 問題3　変数名かえる
 foreach ($personalInfos as $x => $y){
   $personalInfos[$x]['age'] = $ageList[$x];
 }
@@ -94,6 +94,7 @@ class Student
 }
 
 $yamada = new Student(120, '山田');
+var_dump($yamada);
 $yamada->attend('PHP');
 
 

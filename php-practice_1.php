@@ -1,112 +1,108 @@
 <?php
-// Q1 変数と文字列
-$nameQ1 = '鈴木';
-echo "私の名前は「" . $nameQ1 . "」です。\n";
+// Q1 変数と文字列　変数名修正
+$name = '鈴木';
+echo "私の名前は「" . $name . "」です。\n";
 
 
-// Q2 四則演算
-$numQ2 = 5 * 4;
-echo "$numQ2\n";
-echo $numQ2 / 2;
+// Q2 四則演算　変数名修正、
+$num = 5 * 4;
+echo $num . "\n" . $num / 2;
 
 
 
-// Q3 日付操作
+// Q3 日付操作　date関数1回で出力できるよう修正
 date_default_timezone_set('Asia/Tokyo');
-echo "現在時刻は、" . date("Y") . "年" . date("m") . "月" . date("d") . "日" . date("G") . "時" . date("i") . "分" . date("s") . "秒です。";
+echo "現在時刻は、" . date('Y年m月d日G時i分s秒') . "です。";
 
 
 
-// Q4 条件分岐-1 if文
-$deviceQ4 = 'mac';
+// Q4 条件分岐-1 if文  ※if文一つで条件分岐ができるよう修正
+$device = 'mac';
 
-if (($deviceQ4 !== 'windows') && ($deviceQ4 !== 'mac')){
+if (($device === 'windows') || ($device === 'mac')){
+  echo "使用OSは" . $device . "です";
+} else {
   echo "どちらでもありません";
-} 
-    
-if ($deviceQ4 == 'mac') {
-        echo "使用OSは" . $deviceQ4 . "です";
-} 
-    
-if ($deviceQ4 == 'windows') {
-      echo "使用OSは" . $deviceQ4 . "です";
 }
 
 
-// Q5 条件分岐-2 三項演算子
-$ageQ1 = 18;
-$messageQ1 = ($ageQ1 < 18) ? '未成年です。' : '成人です。';
-echo $messageQ1;
+// Q5 条件分岐-2 三項演算子　変数名変更
+$age = 18;
+$message = ($age < 18) ? '未成年です。' : '成人です。';
+echo $message;
 
 
-// Q6 配列
-$kantoQ6 = ['東京都', '栃木県', '群馬県', '茨城県', '埼玉県', '千葉県', '神奈川県'];
-echo $kantoQ6[2] . 'と'. $kantoQ6[3] . 'は関東地方の都道府県です。';
+// Q6 配列　変数名変更
+$kanto = ['東京都', '栃木県', '群馬県', '茨城県', '埼玉県', '千葉県', '神奈川県'];
+echo $kanto[2] . 'と'. $kanto[3] . 'は関東地方の都道府県です。';
 
 
 
-// Q7 連想配列-1
-$kantoQ7 = ['東京都'=> '新宿区', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市', '埼玉県' => 'さいたま市', '千葉県' => '千葉市', '神奈川県' => '横浜市'];
-foreach ($kantoQ7 as $x => $y){
-  echo "$y\n";
+// Q7 連想配列-1　変数名変更、echo出力時関数と改行コードを文字列結合、foreach内で使用するキーとバリューの関数を意味のあるものに変更
+$kanto = ['東京都'=> '新宿区', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市', '埼玉県' => 'さいたま市', '千葉県' => '千葉市', '神奈川県' => '横浜市'];
+foreach ($kanto as $token => $kencho){
+   echo $kencho . "\n"; 
 }
 
 
-// Q8 連想配列-2
-$kantoQ8 = ['東京都'=> '新宿区', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市', '埼玉県' => 'さいたま市', '千葉県' => '千葉市', '神奈川県' => '横浜市'];
-foreach ($kantoQ8 as $x => $y){
-  if ($y == 'さいたま市'){
-    echo $x . "の県庁所在地は、" . $y . "です。";
+// Q8 連想配列-2　変数名変更
+$kanto = ['東京都'=> '新宿区', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市', '埼玉県' => 'さいたま市', '千葉県' => '千葉市', '神奈川県' => '横浜市'];
+foreach ($kanto as $token => $kencho){
+  if ($kencho == 'さいたま市'){
+    echo $token . "の県庁所在地は、" . $kencho . "です。";
   }
 }
 
 
-// Q9 連想配列-3
-$kantoQ9 = ['東京都'=> '新宿区', '長野県' => '長野市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市', '北海道' => '札幌市', '埼玉県' => 'さいたま市', '千葉県' => '千葉市', '神奈川県' => '横浜市'];
-foreach ($kantoQ9 as $x => $y){
-  if (($y !== '長野市') && ($y !== '札幌市')){
-    echo $x . 'の県庁所在地は' . $x . 'です。' . "\n";
+// Q9 連想配列-3  変数名変更
+$kanto = ['東京都'=> '新宿区', '長野県' => '長野市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市', '北海道' => '札幌市', '埼玉県' => 'さいたま市', '千葉県' => '千葉市', '神奈川県' => '横浜市'];
+foreach ($kanto as $token => $kencho){
+  if (($kencho !== '長野市') && ($kencho !== '札幌市')){
+    echo $token . 'の県庁所在地は' . $token . 'です。' . "\n";
   } else {
-    echo $x . 'は関東地方ではありません。' . "\n";
+    echo $token . 'は関東地方ではありません。' . "\n";
   }
 }
 
 
-// Q10 関数-1
-function hello($nameQ10){
-    echo $nameQ10 . 'さん、こんにちは。' . "\n";
+// Q10 関数-1  変数名変更
+function hello($name){
+    echo $name . 'さん、こんにちは。' . "\n";
 }
 
-$namelistQ10 = ['鈴木', '佐藤'];
-$listcount = count($namelistQ10);
+$namelist = ['鈴木', '佐藤'];
+$listcount = count($namelist);
 for ($i = 0; $i < $listcount; $i++){
-  hello($namelistQ10[$i]);
+  hello($namelist[$i]);
 }
 
 
-// Q11 関数-2
+// Q11 関数-2  関数名変更、echoの文字列に「円」追加
 function calcTaxInPrice($price){
   return $price * 1.1;
 }
 
-$default = 1000;
-$taxInPrice = calcTaxInPrice($default);
-echo $default . 'の商品の税込価格は' . $taxInPrice . "円です。" ;
+$Extax = 1000;
+$taxInPrice = calcTaxInPrice($Extax);
+echo $Extax . '円の商品の税込価格は' . $taxInPrice . "円です。" ;
 
 
 
-// Q12 関数とif文
+
+// Q12 関数とif文  関数名変更、if文条件変更（===に）
 function distinguishNum($numjudge){
   return $numjudge % 2;
 }
 
-$numQ12 = 11;
-$numresult = distinguishNum($numQ12);
-if ($numresult == 0){
-  echo $numQ12 . "は偶数です。";
+$num = 11;
+$numresult = distinguishNum($num);
+if ($numresult === 0){
+  echo $num . "は偶数です。";
 } else {
-  echo $numQ12 . "は奇数です。";
-}
+  echo $num . "は奇数です。";
+} 
+
+//===で出力
 
 
 // Q13 関数とswitch文
