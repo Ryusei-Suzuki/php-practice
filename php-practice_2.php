@@ -38,16 +38,16 @@ $ageList = [25, 30, 18];
 // 問題1
 echo $personalInfos[1]['name'] . 'さんの電話番号は' . $personalInfos[1]['tel'] . 'です。' . "\n";
 
-// 問題2
-$numQ2 = 1;
-foreach ($personalInfos as $x){
-  echo $numQ2 . '番目の' . $x['name'] . 'のメールアドレスは' . $x['mail'] . 'で、電話番号は' . $x['tel'] . 'です。' . "\n";
-  $numQ2++;
+// 問題2  変数名変更
+$numcount = 1;
+foreach ($personalInfos as $userstatus){
+  echo $numcount . '番目の' . $userstatus['name'] . 'のメールアドレスは' . $userstatus['mail'] . 'で、電話番号は' . $userstatus['tel'] . 'です。' . "\n";
+  $numcount++;
 }
 
-// 問題3　変数名かえる
-foreach ($personalInfos as $x => $y){
-  $personalInfos[$x]['age'] = $ageList[$x];
+// 問題3　変数名変更
+foreach ($personalInfos as $usertag => $userstatus){
+  $personalInfos[$usertag]['age'] = $ageList[$usertag];
 }
 
 var_dump($personalInfos);

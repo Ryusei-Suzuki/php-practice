@@ -82,14 +82,14 @@ function calcTaxInPrice($price){
   return $price * 1.1;
 }
 
-$Extax = 1000;
+$Extax = 1000;   //excluding tax：税抜き価格
 $taxInPrice = calcTaxInPrice($Extax);
 echo $Extax . '円の商品の税込価格は' . $taxInPrice . "円です。" ;
 
 
 
 
-// Q12 関数とif文  関数名変更、if文条件変更（===に）
+// Q12 関数とif文  関数名変更、if文条件変更（===に変更）
 function distinguishNum($numjudge){
   return $numjudge % 2;
 }
@@ -102,10 +102,10 @@ if ($numresult === 0){
   echo $num . "は奇数です。";
 } 
 
-//===で出力
 
 
-// Q13 関数とswitch文
+
+// Q13 関数とswitch文   関数名変更
 function evaluateGrade($grade){
   switch ($grade){
     case 'A':
@@ -123,10 +123,10 @@ function evaluateGrade($grade){
   }
 }
 
-$judgeQ13_1 = 'B';
-$judgeQ13_2 = 'X';
+$firstjudge = 'B';
+$secondjudge = 'X';
 
-echo evaluateGrade($judgeQ13_1);
-echo evaluateGrade($judgeQ13_2);
+echo evaluateGrade($firstjudge);
+echo evaluateGrade($secondjudge);
 
 ?>
