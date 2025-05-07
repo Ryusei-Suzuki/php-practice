@@ -38,12 +38,12 @@ $ageList = [25, 30, 18];
 // 問題1
 echo $personalInfos[1]['name'] . 'さんの電話番号は' . $personalInfos[1]['tel'] . 'です。' . "\n";
 
-// 問題2  変数名変更
+// 問題2  〇番目の表示をキーで表示
 foreach ($personalInfos as $usertag => $userstatus){
   echo $usertag + 1 . '番目の' . $userstatus['name'] . 'のメールアドレスは' . $userstatus['mail'] . 'で、電話番号は' . $userstatus['tel'] . 'です。' . "\n";
 }
 
-// 問題3　変数名変更
+// 問題3
 foreach ($personalInfos as $usertag => $userstatus){
   $personalInfos[$usertag]['age'] = $ageList[$usertag];
 }
