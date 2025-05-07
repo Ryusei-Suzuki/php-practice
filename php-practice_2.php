@@ -39,10 +39,8 @@ $ageList = [25, 30, 18];
 echo $personalInfos[1]['name'] . 'さんの電話番号は' . $personalInfos[1]['tel'] . 'です。' . "\n";
 
 // 問題2  変数名変更
-$numcount = 1;
-foreach ($personalInfos as $userstatus){
-  echo $numcount . '番目の' . $userstatus['name'] . 'のメールアドレスは' . $userstatus['mail'] . 'で、電話番号は' . $userstatus['tel'] . 'です。' . "\n";
-  $numcount++;
+foreach ($personalInfos as $usertag => $userstatus){
+  echo $usertag + 1 . '番目の' . $userstatus['name'] . 'のメールアドレスは' . $userstatus['mail'] . 'で、電話番号は' . $userstatus['tel'] . 'です。' . "\n";
 }
 
 // 問題3　変数名変更

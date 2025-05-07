@@ -77,30 +77,30 @@ for ($i = 0; $i < $listcount; $i++){
 }
 
 
-// Q11 関数-2  関数名変更、echoの文字列に「円」追加
-function calcTaxInPrice($price){
-  return $price * 1.1;
+// Q11 関数-2  税抜き価格の変数名を指定のものに変更、それに伴い関数名変更
+function calcTaxInPrice($Calprice){
+  return $Calprice * 1.1;
 }
 
-$Extax = 1000;   //excluding tax：税抜き価格
-$taxInPrice = calcTaxInPrice($Extax);
-echo $Extax . '円の商品の税込価格は' . $taxInPrice . "円です。" ;
+$price = 1000;   
+$taxInPrice = calcTaxInPrice($price);
+echo $price . '円の商品の税込価格は' . $taxInPrice . "円です。" ;
 
 
 
 
-// Q12 関数とif文  関数名変更、if文条件変更（===に変更）
+// Q12 distinguishNumの返り値を表示結果に変更
 function distinguishNum($numjudge){
-  return $numjudge % 2;
+  $divnum = $numjudge % 2;
+  if ($divnum === 0){
+    return $numjudge . "は偶数です。";
+  } else {
+    return $numjudge . "は奇数です。";
+  }
 }
 
 $num = 11;
-$numresult = distinguishNum($num);
-if ($numresult === 0){
-  echo $num . "は偶数です。";
-} else {
-  echo $num . "は奇数です。";
-} 
+echo distinguishNum($num);
 
 
 
