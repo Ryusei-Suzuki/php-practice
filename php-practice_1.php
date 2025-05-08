@@ -5,8 +5,8 @@ echo "私の名前は「" . $name . "」です。\n";
 
 
 // Q2 四則演算　変数名修正。
-$numcol = 5 * 4;   //Calculation：計算
-echo $numcol . "\n" . $numcol / 2;
+$numCal = 5 * 4;   //Calculation：計算
+echo $numCal . "\n" . $numCal / 2;
 
 
 
